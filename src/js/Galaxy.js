@@ -22,5 +22,6 @@ export default class Galaxy {
         return this.planets[i];
       }
     }
+    return "not in the Galaxy";
   }
 }

@@ -49,4 +49,12 @@ describe("Galaxy", () => {
       planet: "Venus",
     });
   });
+
+  test("add inputted age to update all of the planets in Galaxy Array and tell when a planet is not in the galaxy", () => {
+    myGalaxy.addPlanet(Mars);
+    myGalaxy.addPlanet(Mercury);
+    myGalaxy.addPlanet(Venus);
+    myGalaxy.addHumanAge("pluto", 30);
+    expect(myGalaxy.addHumanAge("pluto")).toEqual("not in the Galaxy");
+  });
 });
