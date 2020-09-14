@@ -38,4 +38,15 @@ describe("Galaxy", () => {
       planet: "Venus",
     });
   });
+  test("add inputted age to update all of the planets in Galaxy Array", () => {
+    myGalaxy.addPlanet(Mars);
+    myGalaxy.addPlanet(Mercury);
+    myGalaxy.addPlanet(Venus);
+    myGalaxy.addHumanAge("Venus", 30);
+    expect(myGalaxy.findPlanet("Venus")).toEqual({
+      earthYears: 0.62,
+      humanYears: 18,
+      planet: "Venus",
+    });
+  });
 });

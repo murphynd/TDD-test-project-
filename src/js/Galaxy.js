@@ -12,4 +12,15 @@ export default class Galaxy {
       }
     }
   }
+  addHumanAge(planet, numinput) {
+    let num = parseFloat(numinput);
+    for (let i = 0; i < this.planets.length; i++) {
+      if (this.planets[i].planet == planet) {
+        this.planets[i].humanYears = Math.trunc(
+          (num *= this.planets[i].earthYears)
+        );
+        return this.planets[i];
+      }
+    }
+  }
 }
