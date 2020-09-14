@@ -27,4 +27,15 @@ describe("Galaxy", () => {
     expect(myGalaxy.planets).toEqual([Mars, Mercury, Venus]);
     expect(myGalaxy.planets).toHaveLength(3);
   });
+  test("create a method for class galexy to search planets objects", () => {
+    myGalaxy.addPlanet(Mars);
+    myGalaxy.addPlanet(Mercury);
+    myGalaxy.addPlanet(Venus);
+    myGalaxy.findPlanet("Venus");
+    expect(myGalaxy.findPlanet("Venus")).toEqual({
+      earthYears: 0.62,
+      humanYears: 0,
+      planet: "Venus",
+    });
+  });
 });
