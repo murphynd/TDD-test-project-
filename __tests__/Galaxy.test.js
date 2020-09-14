@@ -20,4 +20,11 @@ describe("Galaxy", () => {
     myGalaxy.addPlanet("mars");
     expect(myGalaxy.planets).toEqual(["mars"]);
   });
+  test("this will test if planet objects register in galexy array", () => {
+    myGalaxy.addPlanet(Mars);
+    myGalaxy.addPlanet(Mercury);
+    myGalaxy.addPlanet(Venus);
+    expect(myGalaxy.planets).toEqual([Mars, Mercury, Venus]);
+    expect(myGalaxy.planets).toHaveLength(3);
+  });
 });
