@@ -101,4 +101,29 @@ describe("Galaxy", () => {
     myGalaxy.Dead("Pluto", 200, 72);
     expect(myGalaxy.Dead("Pluto", 200, 72)).toEqual("not in the Galaxy");
   });
+  test("This will take an input of life expentancy and tell the user how many years past life expectancy they have lived with a string", () => {
+    myGalaxy.addPlanet(Mars);
+    myGalaxy.addPlanet(Mercury);
+    myGalaxy.addPlanet(Venus);
+    myGalaxy.Galactic("Mars", 200, 72);
+    expect(myGalaxy.Galactic("Mars", 200, 72)).toEqual(
+      "you should be dead at the ripe age of 304"
+    );
+  });
+  test("This will take an input of life expentancy and tell the user they are alive", () => {
+    myGalaxy.addPlanet(Mars);
+    myGalaxy.addPlanet(Mercury);
+    myGalaxy.addPlanet(Venus);
+    myGalaxy.Galactic("Mars", 18, 72);
+    expect(myGalaxy.Galactic("Mars", 18, 72)).toEqual(
+      "you are alive at the ripe age of 33"
+    );
+  });
+  test("This will take bad input and tell user they are not in the galexy", () => {
+    myGalaxy.addPlanet(Mars);
+    myGalaxy.addPlanet(Mercury);
+    myGalaxy.addPlanet(Venus);
+    myGalaxy.Galactic("pluto", 18, 72);
+    expect(myGalaxy.Galactic("pluto", 18, 72)).toEqual("not in the Galaxy");
+  });
 });
