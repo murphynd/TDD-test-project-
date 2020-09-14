@@ -3,5 +3,42 @@
   <head>
     <title></title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <form id="input">
+        <div class="row">
+          <div class="col">
+            <label for="Planet-input">Planet</label>
+            <input type="text" class="form-control" id="PlanetInput" required />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="Age-input">Your age</label>
+            <input
+              type="number"
+              class="form-control"
+              id="Age-input"
+              placeholder="Your age on Earth"
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="life-input">life Expentancy</label>
+            <input
+              type="number"
+              class="form-control"
+              id="life-input"
+              placeholder="Your life Expentancy, for many its 72"
+              required
+            />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div class="response"></div>
+    </div>
+  </body>
 </html>
