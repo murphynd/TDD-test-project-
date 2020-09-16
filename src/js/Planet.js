@@ -3,5 +3,6 @@ export default class Planet {
     this.planet = planet;
     this.earthYears = earthYears;
     this.humanYears = 0;
+    this.lifexp = 0;
   }
 }

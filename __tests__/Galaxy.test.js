@@ -37,21 +37,25 @@ describe("Galaxy", () => {
     expect(myGalaxy.findPlanet("Venus")).toEqual({
       earthYears: 0.62,
       humanYears: 0,
+      lifexp: 0,
       planet: "Venus",
     });
     expect(myGalaxy.findPlanet("Mercury")).toEqual({
       earthYears: 0.24,
       humanYears: 0,
+      lifexp: 0,
       planet: "Mercury",
     });
     expect(myGalaxy.findPlanet("Jupiter")).toEqual({
       earthYears: 11.8,
       humanYears: 0,
+      lifexp: 0,
       planet: "Jupiter",
     });
     expect(myGalaxy.findPlanet("Mars")).toEqual({
       earthYears: 1.88,
       humanYears: 0,
+      lifexp: 0,
       planet: "Mars",
     });
   });
@@ -63,21 +67,25 @@ describe("Galaxy", () => {
     expect(myGalaxy.findPlanet("Venus")).toEqual({
       earthYears: 0.62,
       humanYears: 18,
+      lifexp: 0,
       planet: "Venus",
     });
     expect(myGalaxy.findPlanet("Mercury")).toEqual({
       earthYears: 0.24,
       humanYears: 7,
+      lifexp: 0,
       planet: "Mercury",
     });
     expect(myGalaxy.findPlanet("Jupiter")).toEqual({
       earthYears: 11.8,
       humanYears: 354,
+      lifexp: 0,
       planet: "Jupiter",
     });
     expect(myGalaxy.findPlanet("Mars")).toEqual({
       earthYears: 1.88,
       humanYears: 56,
+      lifexp: 0,
       planet: "Mars",
     });
   });
@@ -92,16 +100,16 @@ describe("Galaxy", () => {
     myGalaxy.galactic("Mars", 5, 72);
 
     expect(myGalaxy.galactic("Venus", 5, 72)).toEqual(
-      "you are alive at the ripe age of 3"
+      "You are alive at the ripe age of 3 with only 44 left to live!"
     );
     expect(myGalaxy.galactic("Mercury", 5, 72)).toEqual(
-      "you are alive at the ripe age of 1"
+      "You are alive at the ripe age of 1 with only 17 left to live!"
     );
     expect(myGalaxy.galactic("Jupiter", 5, 72)).toEqual(
-      "you are alive at the ripe age of 59"
+      "You are alive at the ripe age of 59 with only 849 left to live!"
     );
     expect(myGalaxy.galactic("Mars", 5, 72)).toEqual(
-      "you are alive at the ripe age of 9"
+      "You are alive at the ripe age of 9 with only 135 left to live!"
     );
   });
   test("TEST 7 This will take an input of life expentancy and tell the user if they are dead.", () => {

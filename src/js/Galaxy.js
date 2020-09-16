@@ -27,26 +27,32 @@ export default class Galaxy {
   galactic(planetInput, ageinput, lifeinput) {
     let age = parseFloat(ageinput);
     let life = parseFloat(lifeinput);
-    let isThere = false;
     for (let i = 0; i < this.planets.length; i++) {
       if (this.planets[i].planet === planetInput) {
-        isThere = true;
         this.planets[i].humanYears = Math.trunc(
           (age *= this.planets[i].earthYears)
         );
+        this.planets[i].lifexp = Math.trunc(
+          (life *= this.planets[i].earthYears)
+        );
         if (this.planets[i].humanYears < life) {
           return (
-            "you are alive at the ripe age of " + this.planets[i].humanYears
+            "You are alive at the ripe age of " +
+            this.planets[i].humanYears +
+            " with only " +
+            this.planets[i].lifexp +
+            " left to live!"
           );
         } else {
           return (
-            "you should be dead at the ripe age of " +
+            "you should be dead at the age of " +
+            this.planets[i].lifexp +
+            "but you have lived on to the age of " +
             this.planets[i].humanYears
           );
         }
       }
     }
-    isThere === false;
     return "not in the Galaxy";
   }
 }
