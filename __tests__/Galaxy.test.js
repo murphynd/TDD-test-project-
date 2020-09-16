@@ -21,15 +21,15 @@ describe("Galaxy", () => {
     myGalaxy.addPlanet(Venus);
     myGalaxy.addPlanet(Jupiter);
   });
-  test("create method for class Galaxy to add planets", () => {
+  test(" TEST 1 create method for class Galaxy to add planets", () => {
     myGalaxy.addPlanet(Saturn);
     expect(myGalaxy.planets).toEqual([Mars, Mercury, Venus, Jupiter, Saturn]);
   });
-  test("this will test if planet objects register in galexy array", () => {
+  test("TEST 2 this will test if planet objects register in galexy array", () => {
     expect(myGalaxy.planets).toEqual([Mars, Mercury, Venus, Jupiter]);
     expect(myGalaxy.planets).toHaveLength(4);
   });
-  test("create a method for class galexy to search planets objects", () => {
+  test("TEST 3 create a method for class galexy to search planets objects", () => {
     myGalaxy.findPlanet("Venus");
     myGalaxy.findPlanet("Mercury");
     myGalaxy.findPlanet("Jupiter");
@@ -55,7 +55,7 @@ describe("Galaxy", () => {
       planet: "Mars",
     });
   });
-  test("add inputted age to update all of the planets in Galaxy Array", () => {
+  test("TEST 4 add inputted age to update all of the planets in Galaxy Array", () => {
     myGalaxy.addHumanAge("Venus", 30);
     myGalaxy.addHumanAge("Mercury", 30);
     myGalaxy.addHumanAge("Jupiter", 30);
@@ -81,69 +81,52 @@ describe("Galaxy", () => {
       planet: "Mars",
     });
   });
-  test("add inputted age to update all of the planets in Galaxy Array and tell when a planet is not in the galaxy", () => {
+  test("TEST 5 add inputted age to update all of the planets in Galaxy Array and tell when a planet is not in the galaxy", () => {
     myGalaxy.addHumanAge("pluto", 30);
     expect(myGalaxy.addHumanAge("pluto")).toEqual("not in the Galaxy");
   });
-  test("This will take an input of life expentancy and tell the user if they would still be alive.", () => {
+  test("TEST 6 This will take an input of life expentancy and tell the user if they would still be alive.", () => {
     myGalaxy.galactic("Venus", 5, 72);
-    // myGalaxy.galactic("Mercury", 5, 72);
-    // myGalaxy.galactic("Jupiter", 5, 72);
-    // myGalaxy.galactic("Mars", 5, 72);
+    myGalaxy.galactic("Mercury", 5, 72);
+    myGalaxy.galactic("Jupiter", 5, 72);
+    myGalaxy.galactic("Mars", 5, 72);
 
     expect(myGalaxy.galactic("Venus", 5, 72)).toEqual(
-      "you are alive at the ripe age of 28"
+      "you are alive at the ripe age of 3"
     );
-    // expect(myGalaxy.galactic("Mercury", 5, 72)).toEqual(
-    //   "you are alive at the ripe age of 28"
-    // );
-    // expect(myGalaxy.galactic("Jupiter", 5, 72)).toEqual(
-    //   "you are alive at the ripe age of 28"
-    // );
-    // expect(myGalaxy.galactic("Mars", 5, 72)).toEqual(
-    //   "you are alive at the ripe age of 28"
-    // );
+    expect(myGalaxy.galactic("Mercury", 5, 72)).toEqual(
+      "you are alive at the ripe age of 1"
+    );
+    expect(myGalaxy.galactic("Jupiter", 5, 72)).toEqual(
+      "you are alive at the ripe age of 59"
+    );
+    expect(myGalaxy.galactic("Mars", 5, 72)).toEqual(
+      "you are alive at the ripe age of 9"
+    );
   });
-  // test("This will take an input of life expentancy and tell the user if they are dead.", () => {
-  //   myGalaxy.galactic("Mars", 200, 72);
-  //   expect(myGalaxy.galactic("Mars", 200, 72)).toEqual(
-  //     "you should be dead at the ripe age of 304"
-  //   );
-  // });
-  // test("This will take an input wrong planet and tell user it is not in the Galaxy", () => {
-  //   myGalaxy.galactic("Pluto", 200, 72);
-  //   expect(myGalaxy.galactic("Pluto", 200, 72)).toEqual("not in the Galaxy");
-  // });
-  // test("This will take an input of life expentancy and tell the user how many years past life expectancy they have lived", () => {
-  //   myGalaxy.galactic("Mars", 200, 72);
-  //   expect(myGalaxy.galactic("Mars", 200, 72)).toEqual(
-  //     "you should be dead at the ripe age of 304"
-  //   );
-  // });
-  // test("This will take an input of life expentancy and tell the user they are alive", () => {
-  //   myGalaxy.galactic("Mars", 18, 72);
-  //   expect(myGalaxy.galactic("Mars", 18, 72)).toEqual(
-  //     "you are alive at the ripe age of 33"
-  //   );
-  // });
-  // test("This will take an bad input and tell user 'not in the galexy'", () => {
-  //   myGalaxy.galactic("Pluto", 200, 72);
-  //   expect(myGalaxy.galactic("Pluto", 200, 72)).toEqual("not in the Galaxy");
-  // });
-  // test("This will take an input of life expentancy and tell the user how many years past life expectancy they have lived with a string", () => {
-  //   myGalaxy.galactic("Mars", 200, 72);
-  //   expect(myGalaxy.galactic("Mars", 200, 72)).toEqual(
-  //     "you should be dead at the ripe age of 304"
-  //   );
-  // });
-  // test("This will take an input of life expentancy and tell the user they are alive", () => {
-  //   myGalaxy.galactic("Mars", 18, 72);
-  //   expect(myGalaxy.galactic("Mars", 18, 72)).toEqual(
-  //     "you are alive at the ripe age of 33"
-  //   );
-  // });
-  // test("This will take bad input and tell user they are not in the galexy", () => {
-  //   myGalaxy.galactic("pluto", 18, 72);
-  //   expect(myGalaxy.galactic("pluto", 18, 72)).toEqual("not in the Galaxy");
-  // });
+  test("TEST 7 This will take an input of life expentancy and tell the user if they are dead.", () => {
+    myGalaxy.galactic("Venus", 500, 72);
+    myGalaxy.galactic("Mercury", 500, 72);
+    myGalaxy.galactic("Jupiter", 500, 72);
+    myGalaxy.galactic("Mars", 500, 72);
+    expect(myGalaxy.galactic("Venus", 500, 72)).toEqual(
+      "you should be dead at the ripe age of 310"
+    );
+    expect(myGalaxy.galactic("Mercury", 500, 72)).toEqual(
+      "you should be dead at the ripe age of 120"
+    );
+    expect(myGalaxy.galactic("Jupiter", 500, 72)).toEqual(
+      "you should be dead at the ripe age of 5900"
+    );
+    expect(myGalaxy.galactic("Mars", 500, 72)).toEqual(
+      "you should be dead at the ripe age of 940"
+    );
+  });
+  test("TEST 8 This will take an input wrong planet and tell user it is not in the Galaxy", () => {
+    myGalaxy.galactic("Venus", 500, 72);
+    myGalaxy.galactic("Mercury", 500, 72);
+    myGalaxy.galactic("Jupiter", 500, 72);
+    myGalaxy.galactic("Mars", 500, 72);
+    expect(myGalaxy.galactic("Pluto", 200, 72)).toEqual("not in the Galaxy");
+  });
 });
