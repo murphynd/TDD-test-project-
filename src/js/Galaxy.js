@@ -30,8 +30,7 @@ export default class Galaxy {
     let isThere = false;
     for (let i = 0; i < this.planets.length; i++) {
       if (this.planets[i].planet === planetInput) {
-        isFalse = true;
-        console.log(this.planets[i].planet);
+        isThere = true;
         this.planets[i].humanYears = Math.trunc(
           (age *= this.planets[i].earthYears)
         );
@@ -39,8 +38,7 @@ export default class Galaxy {
           return (
             "you are alive at the ripe age of " + this.planets[i].humanYears
           );
-        }
-        if (this.planets[i].humanYears >= life) {
+        } else {
           return (
             "you should be dead at the ripe age of " +
             this.planets[i].humanYears
@@ -48,8 +46,7 @@ export default class Galaxy {
         }
       }
     }
-    if (isThere === false) {
-      return; //whatever
-    }
+    isThere === false;
+    return "not in the Galaxy";
   }
 }
