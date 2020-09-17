@@ -11,10 +11,6 @@ A solar year lasts 365 days on planet Earth. However, the length of a solar year
 
 This app determines a user's age based on a planet's solar years.
 
-You are not required to build a UI for this application. Instead, focus on thoroughly testing each piece of functionality. Make sure to commit a TDD spec before writing the corresponding method; in this way, you'll be following a Red, Green, Refactor workflow. Remember to include at least one test for each spec and that, typically, we'll only want one expectation per test.
-
-The business logic of your application should:
-
 Take a person's age in years and create a class that does the following:
 
 - Returns their age in Mercury years. (A Mercury year is .24 Earth years.)
@@ -26,6 +22,8 @@ Take a person's age in years and create a class that does the following:
   If a user has already surpassed the average life expectancy, return the number of years they have lived past the life expectancy.
 
 ## Specs
+
+** the math points were met by using Excell to make a map of what I would be looking for in the testing enviorment **
 
 ```
 Spec: create a class callled PlaneTime that takes the input of differing planet
@@ -79,10 +77,6 @@ Spec:"create a life expentancy method in class Galaxy"
 input:how old am I on Mars? would I be dead (if death was 72yrs old)
 Output: I would be 56 and not dead.
 ```
-
-## Setup/Installation Requirements
-
-## Known Bugs
 
 ## Support and contact details
 
