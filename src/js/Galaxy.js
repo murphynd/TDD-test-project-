@@ -7,48 +7,41 @@ export default class Galaxy {
   }
   findPlanet(planet) {
     for (let i = 0; i < this.planets.length; i++) {
-      if (this.planets[i].planet == planet) {
+      if (this.planets[i].planetName == planet) {
         return this.planets[i];
       }
     }
-  }
-  addHumanAge(planet, numinput) {
-    let num = parseFloat(numinput);
-    for (let i = 0; i < this.planets.length; i++) {
-      if (this.planets[i].planet == planet) {
-        this.planets[i].humanYears = Math.trunc(
-          (num *= this.planets[i].earthYears)
-        );
-        return this.planets[i];
-      }
-    }
-    return "not in the Galaxy";
   }
   galactic(planetInput, ageinput, lifeinput) {
-    let age = parseFloat(ageinput);
+    let num = parseFloat(ageinput);
     let life = parseFloat(lifeinput);
     for (let i = 0; i < this.planets.length; i++) {
-      if (this.planets[i].planet === planetInput) {
-        this.planets[i].humanYears = Math.trunc(
-          (age *= this.planets[i].earthYears)
+      if (this.planets[i].planetName === planetInput) {
+        this.planets[i].earthAge = num;
+        this.planets[i].earthLifexp = life;
+        this.planets[i].ageByPlanet = Math.trunc(
+          this.planets[i].earthAge / this.planets[i].planetYear
         );
-        this.planets[i].lifexp = Math.trunc(
-          (life *= this.planets[i].earthYears)
+        this.planets[i].planetLifexp = Math.trunc(
+          this.planets[i].earthLifexp / this.planets[i].planetYear
         );
-        if (this.planets[i].humanYears < life) {
+        this.planets[i].tillDead = Math.trunc(
+          this.planets[i].planetLifexp - this.planets[i].ageByPlanet
+        );
+        if (this.planets[i].ageByPlanet < this.planets[i].planetLifexp) {
           return (
             "You are alive at the ripe age of " +
-            this.planets[i].humanYears +
+            this.planets[i].ageByPlanet +
             " with only " +
-            this.planets[i].lifexp +
+            this.planets[i].tillDead +
             " left to live!"
           );
         } else {
           return (
             "you should be dead at the age of " +
-            this.planets[i].lifexp +
-            "but you have lived on to the age of " +
-            this.planets[i].humanYears
+            this.planets[i].planetLifexp +
+            " but you have lived on to the age of " +
+            this.planets[i].ageByPlanet
           );
         }
       }

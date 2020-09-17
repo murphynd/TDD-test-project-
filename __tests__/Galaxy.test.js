@@ -21,7 +21,7 @@ describe("Galaxy", () => {
     myGalaxy.addPlanet(Venus);
     myGalaxy.addPlanet(Jupiter);
   });
-  test(" TEST 1 create method for class Galaxy to add planets", () => {
+  test("TEST 1 create method for class Galaxy to add planets", () => {
     myGalaxy.addPlanet(Saturn);
     expect(myGalaxy.planets).toEqual([Mars, Mercury, Venus, Jupiter, Saturn]);
   });
@@ -35,102 +35,122 @@ describe("Galaxy", () => {
     myGalaxy.findPlanet("Jupiter");
     myGalaxy.findPlanet("Mars");
     expect(myGalaxy.findPlanet("Venus")).toEqual({
-      earthYears: 0.62,
-      humanYears: 0,
-      lifexp: 0,
-      planet: "Venus",
+      planetName: "Venus",
+      planetYear: 0.62,
+      ageByPlanet: 0,
+      planetLifexp: 0,
+      earthLifexp: 0,
+      earthAge: 0,
+      tillDead: 0,
     });
     expect(myGalaxy.findPlanet("Mercury")).toEqual({
-      earthYears: 0.24,
-      humanYears: 0,
-      lifexp: 0,
-      planet: "Mercury",
+      planetName: "Mercury",
+      planetYear: 0.24,
+      ageByPlanet: 0,
+      planetLifexp: 0,
+      earthLifexp: 0,
+      earthAge: 0,
+      tillDead: 0,
     });
     expect(myGalaxy.findPlanet("Jupiter")).toEqual({
-      earthYears: 11.8,
-      humanYears: 0,
-      lifexp: 0,
-      planet: "Jupiter",
+      planetName: "Jupiter",
+      planetYear: 11.8,
+      ageByPlanet: 0,
+      planetLifexp: 0,
+      earthLifexp: 0,
+      earthAge: 0,
+      tillDead: 0,
     });
     expect(myGalaxy.findPlanet("Mars")).toEqual({
-      earthYears: 1.88,
-      humanYears: 0,
-      lifexp: 0,
-      planet: "Mars",
+      planetName: "Mars",
+      planetYear: 1.88,
+      ageByPlanet: 0,
+      planetLifexp: 0,
+      earthLifexp: 0,
+      earthAge: 0,
+      tillDead: 0,
     });
   });
-  test("TEST 4 add inputted age to update all of the planets in Galaxy Array", () => {
-    myGalaxy.addHumanAge("Venus", 30);
-    myGalaxy.addHumanAge("Mercury", 30);
-    myGalaxy.addHumanAge("Jupiter", 30);
-    myGalaxy.addHumanAge("Mars", 30);
+  test("TEST 4 this will check planet input after galatic is run", () => {
+    myGalaxy.galactic("Venus", 30, 72);
+    myGalaxy.galactic("Mercury", 30, 72);
+    myGalaxy.galactic("Jupiter", 30, 72);
+    myGalaxy.galactic("Mars", 30, 72);
+    expect(myGalaxy.findPlanet("Mars")).toEqual({
+      planetName: "Mars",
+      planetYear: 1.88,
+      ageByPlanet: 15,
+      planetLifexp: 38,
+      earthLifexp: 72,
+      earthAge: 30,
+      tillDead: 23,
+    });
     expect(myGalaxy.findPlanet("Venus")).toEqual({
-      earthYears: 0.62,
-      humanYears: 18,
-      lifexp: 0,
-      planet: "Venus",
+      planetName: "Venus",
+      planetYear: 0.62,
+      ageByPlanet: 48,
+      planetLifexp: 116,
+      earthLifexp: 72,
+      earthAge: 30,
+      tillDead: 68,
     });
     expect(myGalaxy.findPlanet("Mercury")).toEqual({
-      earthYears: 0.24,
-      humanYears: 7,
-      lifexp: 0,
-      planet: "Mercury",
+      planetName: "Mercury",
+      planetYear: 0.24,
+      ageByPlanet: 125,
+      planetLifexp: 300,
+      earthLifexp: 72,
+      earthAge: 30,
+      tillDead: 175,
     });
     expect(myGalaxy.findPlanet("Jupiter")).toEqual({
-      earthYears: 11.8,
-      humanYears: 354,
-      lifexp: 0,
-      planet: "Jupiter",
-    });
-    expect(myGalaxy.findPlanet("Mars")).toEqual({
-      earthYears: 1.88,
-      humanYears: 56,
-      lifexp: 0,
-      planet: "Mars",
+      planetName: "Jupiter",
+      planetYear: 11.8,
+      ageByPlanet: 2,
+      planetLifexp: 6,
+      earthLifexp: 72,
+      earthAge: 30,
+      tillDead: 4,
     });
   });
-  test("TEST 5 add inputted age to update all of the planets in Galaxy Array and tell when a planet is not in the galaxy", () => {
-    myGalaxy.addHumanAge("pluto", 30);
-    expect(myGalaxy.addHumanAge("pluto")).toEqual("not in the Galaxy");
-  });
-  test("TEST 6 This will take an input of life expentancy and tell the user if they would still be alive.", () => {
+  test("TEST 5 This will take an input of life expentancy and tell the user if they would still be alive.", () => {
     myGalaxy.galactic("Venus", 5, 72);
     myGalaxy.galactic("Mercury", 5, 72);
     myGalaxy.galactic("Jupiter", 5, 72);
     myGalaxy.galactic("Mars", 5, 72);
 
     expect(myGalaxy.galactic("Venus", 5, 72)).toEqual(
-      "You are alive at the ripe age of 3 with only 44 left to live!"
+      "You are alive at the ripe age of 8 with only 108 left to live!"
     );
     expect(myGalaxy.galactic("Mercury", 5, 72)).toEqual(
-      "You are alive at the ripe age of 1 with only 17 left to live!"
+      "You are alive at the ripe age of 20 with only 280 left to live!"
     );
     expect(myGalaxy.galactic("Jupiter", 5, 72)).toEqual(
-      "You are alive at the ripe age of 59 with only 849 left to live!"
+      "You are alive at the ripe age of 0 with only 6 left to live!"
     );
     expect(myGalaxy.galactic("Mars", 5, 72)).toEqual(
-      "You are alive at the ripe age of 9 with only 135 left to live!"
+      "You are alive at the ripe age of 2 with only 36 left to live!"
     );
   });
-  test("TEST 7 This will take an input of life expentancy and tell the user if they are dead.", () => {
+  test("TEST 6 This will take an input of life expentancy and tell the user if they are dead.", () => {
     myGalaxy.galactic("Venus", 500, 72);
     myGalaxy.galactic("Mercury", 500, 72);
     myGalaxy.galactic("Jupiter", 500, 72);
     myGalaxy.galactic("Mars", 500, 72);
     expect(myGalaxy.galactic("Venus", 500, 72)).toEqual(
-      "you should be dead at the ripe age of 310"
+      "you should be dead at the age of 116 but you have lived on to the age of 806"
     );
     expect(myGalaxy.galactic("Mercury", 500, 72)).toEqual(
-      "you should be dead at the ripe age of 120"
+      "you should be dead at the age of 300 but you have lived on to the age of 2083"
     );
     expect(myGalaxy.galactic("Jupiter", 500, 72)).toEqual(
-      "you should be dead at the ripe age of 5900"
+      "you should be dead at the age of 6 but you have lived on to the age of 42"
     );
     expect(myGalaxy.galactic("Mars", 500, 72)).toEqual(
-      "you should be dead at the ripe age of 940"
+      "you should be dead at the age of 38 but you have lived on to the age of 265"
     );
   });
-  test("TEST 8 This will take an input wrong planet and tell user it is not in the Galaxy", () => {
+  test("TEST 7 This will take an input wrong planet and tell user it is not in the Galaxy", () => {
     myGalaxy.galactic("Venus", 500, 72);
     myGalaxy.galactic("Mercury", 500, 72);
     myGalaxy.galactic("Jupiter", 500, 72);
