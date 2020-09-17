@@ -24,6 +24,7 @@ Take a person's age in years and create a class that does the following:
 ## Specs
 
 ** the math points were met by using Excell to make a map of what I would be looking for in the testing enviorment **
+![excell](https://github.com/murphynd/TDD-test-project-/blob/master/src/assets/images/math%20map.png)
 
 ```
 Spec: create a class callled PlaneTime that takes the input of differing planet
